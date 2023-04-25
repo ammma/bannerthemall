@@ -1,0 +1,15 @@
+<img src="" id="banner">
+
+<script>
+// Get the current URL
+var currentUrl = window.location.href;
+
+// Get the image element
+var img = document.getElementById("banner");
+
+// Append the current URL to the src attribute value using a query string
+var newSrc = "banner.php?page_url=" + encodeURIComponent(currentUrl);
+
+// Set the new src attribute value
+img.setAttribute("src", newSrc);
+</script>

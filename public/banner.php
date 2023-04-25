@@ -1,6 +1,7 @@
 <?php
 
 use App\Persistence\PersistenceFactory;
+use App\Config\Config;
 
 require_once "../vendor/autoload.php";
 
@@ -11,7 +12,9 @@ header('Content-Length: ' . filesize($filePath));
 readfile($filePath);
 
 try {
-    $factory = new PersistenceFactory(new App\Config\Config("../config/config.php"));
+    Config::load("../config/config.php");
+
+    $factory = new PersistenceFactory();
 
     $writer = $factory->createWriter();
 

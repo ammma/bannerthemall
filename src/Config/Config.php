@@ -8,7 +8,7 @@ class Config
 
     public static function load(string $configFileName)
     {
-        static::$config = include_once $configFileName;
+        static::$config = include $configFileName;
     }
 
     public static function get($key, $default = null): mixed
